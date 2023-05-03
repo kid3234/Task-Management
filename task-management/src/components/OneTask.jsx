@@ -23,7 +23,7 @@ const CheckComplet=()=>{
     axios.put(`http://localhost:8081/item/${checked.cid}`,checked)
     .then(res=>{
         console.log(res.data)
-        window.location.reload();
+        
     })
 }
     useEffect(() => {
@@ -41,7 +41,7 @@ const CheckComplet=()=>{
         <div className='onetask-div'>
 
             {
-                task.map((tasks) =>
+                task?.map((tasks) =>
                     <div key={tasks.id} className='one-task'>
                         <h3>Task title: {tasks.title}</h3>
                         <p className='desc-p'>Description: {tasks.description}</p>
